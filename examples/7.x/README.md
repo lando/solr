@@ -53,7 +53,7 @@ lando ssh -s helper -c "curl http://custom:8983/solr/admin/cores?action=RELOAD&c
 # Should have records persist a rebuild on version 4 plus
 lando rebuild -y
 lando ssh -s helper -c "curl http://custom:8983/solr/freedom/select?q=*:*" | grep "12"
-lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | grep "Tom Brady"
+lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | grep "12"
 
 # Should load custom config
 lando ssh -s custom -c "cat /solrconf/conf/schema.xml" | grep "drupal-6.5-solr-7.x"

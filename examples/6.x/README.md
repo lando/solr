@@ -40,7 +40,7 @@ lando ssh -s helper -c "curl http://defaults:8983/solr/admin/cores?action=RELOAD
 
 # Should have records persist a rebuild on version 4 plus
 lando rebuild -y
-lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | grep "Tom Brady"
+lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | grep "12"
 ```
 
 Destroy tests

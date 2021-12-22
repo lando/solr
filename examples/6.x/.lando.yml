@@ -11,7 +11,7 @@ services:
 tooling:
   post-record-defaults:
     cmd: "curl http://defaults:8983/solr/lando/update -H 'Content-Type: text/xml' -T '/app/test.xml' -X POST"
-    service: helper
+    service: defaults
 
 # This is important because it lets lando know to test against the plugin in this repo
 # DO NOT REMOVE THIS!

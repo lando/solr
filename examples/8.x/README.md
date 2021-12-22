@@ -56,11 +56,11 @@ lando ssh -s helper -c "curl http://patch:8983/solr/admin/cores?action=RELOAD&co
 # Should have records persist a rebuild on version 4 plus
 lando rebuild -y
 lando ssh -s helper -c "curl http://custom8:8983/solr/levon/select?q=*:*" | grep "12"
-lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | grep "Tom Brady"
-lando ssh -s helper -c "curl http://patch:8983/solr/solo/select?q=*:*" | grep "Tom Brady"
+lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | grep "12"
+lando ssh -s helper -c "curl http://patch:8983/solr/solo/select?q=*:*" | grep "12"
 
 # Should load custom config
-lando ssh -s custom8 -c "cat /solrconf/conf/schema.xml" | grep "drupal-6.5-solr-7.x"
+lando ssh -s custom8 -c "cat /solrconf/conf/schema.xml" | grep "drupal-4.2.3-solr-8.x"
 ```
 
 Destroy tests
