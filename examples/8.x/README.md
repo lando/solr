@@ -27,7 +27,7 @@ Run the following commands to validate things are rolling as they should.
 lando ssh -s helper -c "curl defaults:8983/solr/admin/info/system?wt=json" | grep "solr-spec-version" | grep "8."
 
 # Should use version 8.11.1 on patch version
-lando ssh -s helper -c "curl patch:8983/solr/admin/info/system" | grep "solr-spec-version" | grep "8.11.1"
+lando ssh -s helper -c "curl patch:8983/solr/admin/info/system" | grep "solr-spec-version" | grep "8.6.3"
 
 # Should use version 8 on custom8 version
 lando ssh -s helper -c "curl custom8:8983/solr/admin/info/system" | grep "solr-spec-version" | grep "8."

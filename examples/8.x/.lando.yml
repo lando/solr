@@ -6,7 +6,7 @@ services:
     config:
       dir: '8.x-conf'
   patch:
-    type: solr:8.11.1
+    type: solr:8.6
     core: solo
     portforward: true
     config:
