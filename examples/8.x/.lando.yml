@@ -1,9 +1,4 @@
 name: lando-solr-8
-proxy:
-  defaults:
-    - defaults.solr.lndo.site:8983
-  patch:
-    - patch.solr.lndo.site:8983
 services:
   defaults:
     type: solr:8
