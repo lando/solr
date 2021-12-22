@@ -13,6 +13,11 @@ You can easily add it to your Lando app by adding an entry to the [services](htt
 ## Supported versions
 
 *   [8](https://hub.docker.com/r/_/solr/)
+*   [8.11](https://hub.docker.com/r/_/solr/)
+*   [8.10](https://hub.docker.com/r/_/solr/)
+*   [8.9](https://hub.docker.com/r/_/solr/)
+*   [8.8](https://hub.docker.com/r/_/solr/)
+*   [8.7](https://hub.docker.com/r/_/solr/)
 *   [8.6](https://hub.docker.com/r/_/solr/)
 *   [8.5](https://hub.docker.com/r/_/solr/)
 *   [8.4](https://hub.docker.com/r/_/solr/)
@@ -23,7 +28,7 @@ You can easily add it to your Lando app by adding an entry to the [services](htt
 *   **[7](https://hub.docker.com/r/_/solr/)** **(default)**
 *   [7.7](https://hub.docker.com/r/_/solr/)
 *   [7.6](https://hub.docker.com/r/_/solr/)
-*   [custom](https://docs.lando.dev/config/services.html#advanced)
+*   [custom](./../config/services.md#advanced)
 
 ## Legacy versions
 
