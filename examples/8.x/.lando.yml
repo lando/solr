@@ -1,0 +1,37 @@
+name: lando-solr-8
+services:
+  defaults:
+    type: solr:8
+    portforward: true
+    config:
+      dir: '8.x-conf'
+  patch:
+    type: solr:8.11.1
+    core: solo
+    portforward: true
+    config:
+      dir: '8.x-conf'
+  custom8:
+    type: solr:8
+    portforward: true
+    core: levon
+    config:
+      dir: '8.x-conf'
+  helper:
+    type: php
+    via: cli
+tooling:
+  post-record-custom8:
+    cmd: "curl http://custom8:8983/solr/levon/update -H 'Content-Type: text/xml' -T '/app/test.xml' -X POST"
+    service: custom8
+  post-record-defaults:
+    cmd: "curl http://defaults:8983/solr/lando/update -H 'Content-Type: text/xml' -T '/app/test.xml' -X POST"
+    service: helper
+  post-record-patch:
+    cmd: "curl http://patch:8983/solr/solo/update -H 'Content-Type: text/xml' -T '/app/test.xml' -X POST"
+    service: helper
+
+# This is important because it lets lando know to test against the plugin in this repo
+# DO NOT REMOVE THIS!
+plugins:
+  "@lando/solr": ./../../
