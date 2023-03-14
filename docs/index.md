@@ -34,7 +34,7 @@ services:
 *   **[7](https://hub.docker.com/r/_/solr/)** **(default)**
 *   [7.7](https://hub.docker.com/r/_/solr/)
 *   [7.6](https://hub.docker.com/r/_/solr/)
-*   [custom](https://doc.lando.dev/config/services.html#advanced)
+*   [custom](https://doc.lando.dev/config/services.html#custom-installation)
 
 ## Legacy versions
 
