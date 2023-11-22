@@ -474,6 +474,22 @@
     mocha "^5.2.0"
     object-hash "^2.2.0"
 
+"@lando/nginx@0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@lando/nginx/-/nginx-0.10.0.tgz#c2d63d112a615d19c4313b18bf2e97a7fcab0308"
+  integrity sha512-aKpULGWimycpSYpQAqBtiFwt/zfXACxN59vugEnQNypVkVCPTzq0A2Gk2rcd41DaCpR8cmf8BM80Eqz+GeM7UA==
+  dependencies:
+    lodash "^4.17.21"
+
+"@lando/php@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@lando/php/-/php-0.10.0.tgz#b7761cd97a6172b6ee9f857a5a52febb8363bf42"
+  integrity sha512-q2VLBXHzuuozVTckGzEi7o6d+LBRbo/wBoxsl7YnGHLOevtJZDMgKjj6hF2QSiDj0Yg5vAwvUiY+Yj8WPubUCQ==
+  dependencies:
+    "@lando/nginx" "0.10.0"
+    lodash "^4.17.21"
+    semver "^7.3.7"
+
 "@lando/vuepress-theme-default-plus@1.0.0-beta.49":
   version "1.0.0-beta.49"
   resolved "https://registry.yarnpkg.com/@lando/vuepress-theme-default-plus/-/vuepress-theme-default-plus-1.0.0-beta.49.tgz#857476a02680845522ff9db06316e6f22143a2a6"
@@ -3762,7 +3778,7 @@ semver@^6.0.0, semver@^6.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
-semver@^7.2.1, semver@^7.3.5, semver@^7.3.8:
+semver@^7.2.1, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8:
   version "7.5.4"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
   integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==

@@ -5,6 +5,8 @@ const _ = require('lodash');
 
 // Versions
 const supportedVersions = [
+  '9.0',
+  '9',
   '8.11',
   '8.10',
   '8.9',
@@ -56,11 +58,21 @@ const parse4 = options => {
 };
 
 /*
- * Helper to parse legacy solr 4 config
+ * Helper to parse solr 8 config
  */
 const parse8 = options => {
   options = parseElse(options);
   options.dataDir = '/var/solr/data';
+  return options;
+};
+
+/*
+ * Helper to parse solr 9 config
+ */
+const parse9 = options => {
+  options = parseElse(options);
+  options.dataDir = '/var/solr/data';
+  options.startScript = 'start-solr-9.sh';
   return options;
 };
 
@@ -125,6 +137,8 @@ const parseConfig = options => {
     case '8.1': return parse8(options);
     case '8.0': return parse8(options);
     case '8': return parse8(options);
+    case '9.0': return parse9(options);
+    case '9': return parse9(options);
     default: return parseElse(options);
   };
 };

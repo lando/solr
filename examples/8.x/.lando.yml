@@ -26,3 +26,4 @@ tooling:
 # DO NOT REMOVE THIS!
 plugins:
   "@lando/solr": ./../../
+  "@lando/php": ./../../node_modules/@lando/php

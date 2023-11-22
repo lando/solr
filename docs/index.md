@@ -18,6 +18,8 @@ services:
 
 ## Supported versions
 
+*   [9](https://hub.docker.com/r/_/solr/) **(experimental)**
+*   [9.0](https://hub.docker.com/r/_/solr/) **(experimental)**
 *   [8](https://hub.docker.com/r/_/solr/)
 *   [8.11](https://hub.docker.com/r/_/solr/)
 *   [8.10](https://hub.docker.com/r/_/solr/)
