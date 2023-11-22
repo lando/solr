@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const path = require('path');
 
 // Versions
 const supportedVersions = [
@@ -152,7 +153,7 @@ module.exports = {
     legacy: ['6.6', '6', '5.5', '5', '4.10', '4', '3.6', '3'],
     patchesSupported: true,
     command: '/start-solr.sh',
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config'),
     core: 'lando',
     dataDir: '/opt/solr/server/solr/mycores',
     moreHttpPorts: ['8983'],
