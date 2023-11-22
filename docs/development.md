@@ -157,6 +157,19 @@ Now open a pull request and the new tests should run!
 
 For a deeper dive on Leia you can go [here](https://github.com/lando/leia).
 
+## Releasing
+
+To deploy and publish a new version of the package to the `npm` registry you need only [create a release on GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). The GitHub release will automatically [prepare the release](https://github.com/lando/prepare-release-action) and deploy it to NPM, so make sure to use the correct semantic version for the release title (ex: \`v0.8.0\`).
+
+Also note that if you create a "pre-release" it will tag the `npm` package with `edge` instead of the default `latest` tag. Also note that while you can toggle the pre-release checkbox after the initial release creation this will not trigger a new release and/or promote the release from `edge` to `latest`. If you want to deploy to `latest` then create a new release without pre-released checked.
+
+```bash
+# Will pull the most recent GitHub release
+yarn add @lando/solr
+# Will pull the most recent GitHub pre-release
+yarn add @lando/solr@edge
+```
+
 ## Contribution
 
 If you want to contribute code then just follow [this flow](https://guides.github.com/introduction/flow/).
