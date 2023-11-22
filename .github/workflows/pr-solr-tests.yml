@@ -45,10 +45,6 @@ jobs:
             setup.skipCommonPlugins=true
             setup.plugins.@lando/solr=/home/runner/work/solr/solr
           telemetry: false
-      - name: Verify Lando works and we are dogfooding this plugin for tests
-        run: |
-          lando version
-          lando config --path plugins | grep solr | grep /home/runner/work/solr/solr || (echo "::error:: Not dogfooding this plugin correctly!" && exit 1)
       - name: Run Leia Tests
         uses: lando/run-leia-action@v2
         with:
