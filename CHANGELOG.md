@@ -1,4 +1,4 @@
-## v0.9.0 - [November 2023](https://github.com/lando/solr/releases/tag/v0.9.0)
+## v0.9.0 - [November 21, 2023](https://github.com/lando/solr/releases/tag/v0.9.0)
 * Added support for Solr 9.x [#40](https://github.com/lando/solr/pull/40)
 * Isolated testing to Solr [#40](https://github.com/lando/solr/pull/40)
 * Refactored plugin structure to the modern style [#41](https://github.com/lando/solr/pull/41)
