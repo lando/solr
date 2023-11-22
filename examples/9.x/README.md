@@ -46,7 +46,7 @@ lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | gre
 lando ssh -s helper -c "curl http://patch:8983/solr/solo/select?q=*:*" | grep "12"
 
 # Should load custom config
-lando ssh -s defaults -c "cat /solrconf/conf/schema.xml" | grep "<luceneMatchVersion>9.0</luceneMatchVersion"
+lando ssh -s defaults -c "cat /solrconf/conf/solrconfig.xml" | grep "<luceneMatchVersion>9.0</luceneMatchVersion"
 ```
 
 Destroy tests
