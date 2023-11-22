@@ -17,7 +17,7 @@ jobs:
           - ubuntu-22.04
         node-version:
           - '18'
-        leia-tests:
+        leia-test:
           - examples/3.x
           - examples/4.x
           - examples/5.x
