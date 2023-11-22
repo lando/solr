@@ -42,7 +42,8 @@ jobs:
         with:
           lando-version: ${{ matrix.lando-version }}
           config: |
-            plugins.@lando/solr=/home/runner/work/solr/solr
+            setup.skipCommonPlugins=true
+            setup.plugins.@lando/solr=/home/runner/work/solr/solr
           telemetry: false
       - name: Verify Lando works and we are dogfooding this plugin for tests
         run: |
