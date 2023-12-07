@@ -8,7 +8,7 @@ next: ./config.html
 
 [Solr](http://lucene.apache.org/solr/) is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
 
-You can easily add it to your Lando app by adding an entry to the [services](https://doc.lando.dev/config/services.html) top-level config in your [Landofile](https://doc.lando.dev/config/lando.html).
+You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/config/services.html) top-level config in your [Landofile](https://docs.lando.dev/config/lando.html).
 
 ```yaml
 services:
