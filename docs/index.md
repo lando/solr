@@ -8,7 +8,7 @@ next: ./config.html
 
 [Solr](https://solr.apache.org/) is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
 
-You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/core/v3/lando-service.html) top-level config in your [Landofile](https://docs.lando.dev/core/v3).
+You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/core/v3/services/lando.html) top-level config in your [Landofile](https://docs.lando.dev/core/v3).
 
 ```yaml
 services:
@@ -36,7 +36,7 @@ services:
 *   **[7](https://hub.docker.com/_/solr/)** **(default)**
 *   [7.7](https://hub.docker.com/_/solr/)
 *   [7.6](https://hub.docker.com/_/solr/)
-*   [custom](https://docs.lando.dev/core/v3/lando-service.html#overrides)
+*   [custom](https://docs.lando.dev/core/v3/services/lando.html#overrides)
 
 ## Legacy versions
 
