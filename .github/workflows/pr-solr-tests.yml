@@ -18,7 +18,6 @@ jobs:
         node-version:
           - '18'
         leia-test:
-          - examples/3.x
           - examples/4.x
           - examples/5.x
           - examples/6.x
