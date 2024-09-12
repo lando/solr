@@ -46,10 +46,10 @@ You can still run these versions with Lando but for all intents and purposes the
 *   [6](https://hub.docker.com/_/solr/)
 *   [5.5](https://hub.docker.com/_/solr/)
 *   [5](https://hub.docker.com/_/solr/)
-*   [4](https://hub.docker.com/actency/docker-solr)
-*   [4.10](https://hub.docker.com/actency/docker-solr)
-*   [3](https://hub.docker.com/actency/docker-solr)
-*   [3.6](https://hub.docker.com/actency/docker-solr)
+*   [4](https://hub.docker.com/r/actency/docker-solr)
+*   [4.10](https://hub.docker.com/r/actency/docker-solr)
+*   [3](https://hub.docker.com/r/actency/docker-solr)
+*   [3.6](https://hub.docker.com/r/actency/docker-solr)
 
 ## Patch versions
 
@@ -65,5 +65,5 @@ services:
     type: solr:5.5.5
 ```
 
-But make sure you use one of the available [patch tags](https://hub.docker.com/library/solr/tags/) for the underlying image we are using.
+But make sure you use one of the available [patch tags](https://hub.docker.com/_/solr/tags) for the underlying image we are using.
 
