@@ -6,6 +6,13 @@ const path = require('path');
 
 // Versions
 const supportedVersions = [
+  '9.7',
+  '9.6',
+  '9.5',
+  '9.4',
+  '9.3',
+  '9.2',
+  '9.1',
   '9.0',
   '9',
   '8.11',
@@ -138,6 +145,13 @@ const parseConfig = options => {
     case '8.1': return parse8(options);
     case '8.0': return parse8(options);
     case '8': return parse8(options);
+    case '9.7': return parse9(options);
+    case '9.6': return parse9(options);
+    case '9.5': return parse9(options);
+    case '9.4': return parse9(options);
+    case '9.3': return parse9(options);
+    case '9.2': return parse9(options);
+    case '9.1': return parse9(options);
     case '9.0': return parse9(options);
     case '9': return parse9(options);
     default: return parseElse(options);

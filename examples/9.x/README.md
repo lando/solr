@@ -26,8 +26,8 @@ Run the following commands to validate things are rolling as they should.
 # Should use version 9.x for the default version
 lando ssh -s helper -c "curl defaults:8983/solr/admin/info/system?wt=json" | grep "solr-spec-version" | grep "9."
 
-# Should use version 9.0 on patch version
-lando ssh -s helper -c "curl patch:8983/solr/admin/info/system" | grep "solr-spec-version" | grep "9.0"
+# Should use version 9.7 on patch version
+lando ssh -s helper -c "curl patch:8983/solr/admin/info/system" | grep "solr-spec-version" | grep "9.7"
 
 # Should have lando core by default
 lando ssh -s helper -c "curl defaults:8983/solr/admin/cores?action=STATUS" | grep lando
