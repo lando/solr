@@ -1,4 +1,6 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
+
+## v1.2.0 - [September 20, 2024](https://github.com/lando/solr/releases/tag/v1.2.0)
   * Added support for Solr 9.x minor versions. [#50](https://github.com/lando/solr/issues/50)
 
 ## v1.1.0 - [March 8, 2024](https://github.com/lando/solr/releases/tag/v1.1.0)
