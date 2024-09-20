@@ -6,8 +6,6 @@ const path = require('path');
 
 // Versions
 const supportedVersions = [
-  '9.9',
-  '9.8',
   '9.7',
   '9.6',
   '9.5',
@@ -147,8 +145,6 @@ const parseConfig = options => {
     case '8.1': return parse8(options);
     case '8.0': return parse8(options);
     case '8': return parse8(options);
-    case '9.9': return parse9(options);
-    case '9.8': return parse9(options);
     case '9.7': return parse9(options);
     case '9.6': return parse9(options);
     case '9.5': return parse9(options);

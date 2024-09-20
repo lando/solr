@@ -6,7 +6,7 @@ services:
     config:
       dir: '9.x-conf'
   patch:
-    type: solr:9.9
+    type: solr:9.7
     core: solo
     portforward: true
     config:
