@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated release process to generate an edge release when stable releases are created.
+
 ## v1.2.0 - [September 20, 2024](https://github.com/lando/solr/releases/tag/v1.2.0)
   * Added support for Solr 9.x minor versions. [#50](https://github.com/lando/solr/issues/50)
 
