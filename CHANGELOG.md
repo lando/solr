@@ -1,4 +1,5 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
+  * Added support for Solr 9.8 [#57](https://github.com/lando/solr/issues/57) and 9.9 [#59](https://github.com/lando/solr/issues/59).
 
 ## v1.3.3 - [December 6, 2024](https://github.com/lando/solr/releases/tag/v1.3.3)
 
