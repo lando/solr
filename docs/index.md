@@ -44,7 +44,7 @@ services:
 *   [7](https://hub.docker.com/_/solr/)
 *   [7.7](https://hub.docker.com/_/solr/)
 *   [7.6](https://hub.docker.com/_/solr/)
-*   [custom](https://docs.lando.dev/core/v3/services/lando.html#overrides)
+*   [custom](https://docs.lando.dev/services/lando-3.html#overrides)
 
 ## Legacy versions
 
