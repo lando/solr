@@ -1,34 +1,33 @@
 ---
 title: Solr Lando Plugin
 description: Add a highly configurable Apache Solr service to Lando for local development with all the power of Docker and Docker Compose.
-next: ./config.html
 ---
 
 # Solr
 
 [Solr](https://solr.apache.org/) is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world's largest internet sites.
 
-You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/core/v3/services/lando.html) top-level config in your [Landofile](https://docs.lando.dev/core/v3).
+You can easily add it to your Lando app by adding an entry to the [services](https://docs.lando.dev/services/lando-3.html) top-level config in your [Landofile](https://docs.lando.dev/landofile/).
 
 ```yaml
 services:
   myservice:
-    type: solr
+    type: solr:9
 ```
 
 ## Supported versions
 
-*   [9.9](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.8](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.7](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.6](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.5](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.4](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.3](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.2](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.1](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.0](https://hub.docker.com/_/solr/) **(experimental)**
+*   [9.9](https://hub.docker.com/_/solr/)
+*   [9.8](https://hub.docker.com/_/solr/)
+*   [9.7](https://hub.docker.com/_/solr/)
+*   [9.6](https://hub.docker.com/_/solr/)
+*   [9.5](https://hub.docker.com/_/solr/)
+*   [9.4](https://hub.docker.com/_/solr/)
+*   [9.3](https://hub.docker.com/_/solr/)
+*   [9.2](https://hub.docker.com/_/solr/)
+*   [9.1](https://hub.docker.com/_/solr/)
+*   [9](https://hub.docker.com/_/solr/)
+*   [9.0](https://hub.docker.com/_/solr/)
 *   [8](https://hub.docker.com/_/solr/)
 *   [8.11](https://hub.docker.com/_/solr/)
 *   [8.10](https://hub.docker.com/_/solr/)
@@ -42,7 +41,7 @@ services:
 *   [8.2](https://hub.docker.com/_/solr/)
 *   [8.1](https://hub.docker.com/_/solr/)
 *   [8.0](https://hub.docker.com/_/solr/)
-*   **[7](https://hub.docker.com/_/solr/)** **(default)**
+*   [7](https://hub.docker.com/_/solr/)
 *   [7.7](https://hub.docker.com/_/solr/)
 *   [7.6](https://hub.docker.com/_/solr/)
 *   [custom](https://docs.lando.dev/core/v3/services/lando.html#overrides)

@@ -5,14 +5,14 @@ description: Learn how to configure the Lando Solr service.
 
 # Configuration
 
-Here are the configuration options, set to the default values, for this service. If you are unsure about where this goes or what this means, we *highly recommend* scanning the [services documentation](https://docs.lando.dev/core/v3/services/lando.html) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this service. If you are unsure about where this goes or what this means, we *highly recommend* scanning the [services documentation](https://docs.lando.dev/services/lando-3.html) to get a good handle on how the magicks work.
 
-Also note that options, in addition to the [build steps](https://docs.lando.dev/core/v3/services/lando.html#build-steps) and [overrides](https://docs.lando.dev/core/v3/services/lando.html#overrides) that are available to every service, are shown below:
+Also note that options, in addition to the [build steps](https://docs.lando.dev/services/lando-3.html#build-steps) and [overrides](https://docs.lando.dev/services/lando-3.html#overrides) that are available to every service, are shown below:
 
 ```yaml
 services:
   myservice:
-    type: solr:7
+    type: solr:9
     portforward: false
     core: lando
     config:
@@ -32,7 +32,7 @@ services:
 ```yaml
 services:
   myservice:
-    type: solr
+    type: solr:9
     portforward: true
 ```
 
@@ -41,7 +41,7 @@ services:
 ```yaml
 services:
   myservice:
-    type: solr
+    type: solr:9
     portforward: 8983
 ```
 
@@ -52,7 +52,7 @@ You can easily set up a different core name with the `core` config value.
 ```yaml
 services:
   myservice:
-    type: solr
+    type: solr:9
     core: my-core
 ```
 
@@ -95,7 +95,7 @@ Note that if using custom configuration you can put your configuration files any
 ```yaml
 services:
   myservice:
-    type: solr
+    type: solr:9
     config:
       dir: web/modules/contrib/search_api_solr/jump-start/solr7/config-set
 ```
