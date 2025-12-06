@@ -13,7 +13,7 @@ Add a `solr` service to your Landofile
 ```yaml
 services:
   myservice:
-    type: solr
+    type: solr:9
 ```
 
 For more info you should check out the [docs](https://docs.lando.dev/solr):
