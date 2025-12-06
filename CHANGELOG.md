@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.4.1 - [December 6, 2025](https://github.com/lando/solr/releases/tag/v1.4.1)
+
 * Updated to use `npm` Trusted Publishing
 
 ## v1.4.0 - [December 6, 2025](https://github.com/lando/solr/releases/tag/v1.4.0)
