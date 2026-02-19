@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated `@lando/php` to `^1.11.0` for MySQL client auto-detection fix
+
 ## v1.5.0 - [February 18, 2026](https://github.com/lando/solr/releases/tag/v1.5.0)
 
 * Updated `@lando/php` to `^1.10.0`
