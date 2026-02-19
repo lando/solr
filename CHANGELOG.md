@@ -1,5 +1,12 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.5.0 - [February 18, 2026](https://github.com/lando/solr/releases/tag/v1.5.0)
+
+* Updated `@lando/php` to `^1.10.0`
+* Fixed release workflow to trigger on `published` instead of `created`
+* Updated `actions/cache` to v5 across CI workflows
+* Added [@AaronFeledy](https://github.com/AaronFeledy) as maintainer
+
 ## v1.4.1 - [December 6, 2025](https://github.com/lando/solr/releases/tag/v1.4.1)
 
 * Updated to use `npm` Trusted Publishing
