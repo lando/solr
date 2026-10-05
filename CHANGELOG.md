@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.5.0 - [October 5, 2026](https://github.com/lando/solr/releases/tag/v1.5.0)
+
 * Added support for Solr 10 [#74](https://github.com/lando/solr/issues/74).
 * Added support for Solr 9.10.
 * Fixed patch versions such as `solr:8.11.2` and `solr:10.1` so they use the correct Solr config [#27](https://github.com/lando/solr/issues/27). Apps already pinned to an 8.x or 9.x patch tag now store data in `/var/solr/data` and may need a rebuild.
