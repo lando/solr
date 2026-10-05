@@ -45,8 +45,8 @@ lando rebuild -y
 lando ssh -s helper -c "curl http://defaults:8983/solr/lando/select?q=*:*" | grep "12"
 lando ssh -s helper -c "curl http://patch:8983/solr/solo/select?q=*:*" | grep "12"
 
-# Should load custom config
-lando ssh -s defaults -c "cat /solrconf/conf/solrconfig.xml" | grep "<luceneMatchVersion>9.0</luceneMatchVersion"
+# Should load custom config into the core, not just mount it
+lando ssh -s defaults -c "cat /var/solr/data/lando/conf/solrconfig.xml" | grep "<luceneMatchVersion>9.0</luceneMatchVersion"
 ```
 
 Destroy tests
