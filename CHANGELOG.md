@@ -2,6 +2,8 @@
 
 * Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) for mod_headers/mod_expires and xdebug log fix
 * Added support for Solr 10 [#74](https://github.com/lando/solr/issues/74)
+* Added support for Solr 9.10
+* Route patch versions to the matching series parser so `solr:8.11.2` and `solr:10.1` do not fall through to the generic start script [#27](https://github.com/lando/solr/issues/27)
 
 ## v1.5.0 - [February 18, 2026](https://github.com/lando/solr/releases/tag/v1.5.0)
 

@@ -8,6 +8,7 @@ const path = require('path');
 const supportedVersions = [
   '10.0',
   '10',
+  '9.10',
   '9.9',
   '9.8',
   '9.7',
@@ -111,8 +112,16 @@ const parseElse = options => {
 /*
  * Helper to get core
  */
+const versionKey = version => {
+  const parts = String(version).split('.');
+  if (parts.length > 2 && parts.every(part => /^\d+$/.test(part))) return parts.slice(0, 2).join('.');
+  return version;
+};
+
+const majorVersion = version => String(version).split('.')[0];
+
 const getCore = options => {
-  switch (options.version) {
+  switch (versionKey(options.version)) {
     case 'custom': return 'not supported';
     case '3.6': return 'not supported';
     case '3': return 'not supported';
@@ -141,7 +150,7 @@ const getEnvironment = options => ({
  * Helper to parse solr config
  */
 const parseConfig = options => {
-  switch (options.version) {
+  switch (versionKey(options.version)) {
     case '3.6': return parse3(options);
     case '3': return parse3(options);
     case '4.10': return parse4(options);
@@ -159,6 +168,7 @@ const parseConfig = options => {
     case '8.1': return parse8(options);
     case '8.0': return parse8(options);
     case '8': return parse8(options);
+    case '9.10': return parse9(options);
     case '9.9': return parse9(options);
     case '9.8': return parse9(options);
     case '9.7': return parse9(options);
@@ -172,8 +182,16 @@ const parseConfig = options => {
     case '9': return parse9(options);
     case '10.0': return parse10(options);
     case '10': return parse10(options);
-    default: return parseElse(options);
+    default: break;
   };
+
+  // Unlisted minors still need the right start script. Solr 10 defaults to SolrCloud.
+  switch (majorVersion(options.version)) {
+    case '10': return parse10(options);
+    case '9': return parse9(options);
+    case '8': return parse8(options);
+    default: return parseElse(options);
+  }
 };
 
 // Builder
