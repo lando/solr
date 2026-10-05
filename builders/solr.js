@@ -109,9 +109,6 @@ const parseElse = options => {
   return options;
 };
 
-/*
- * Helper to get core
- */
 const versionKey = version => {
   const parts = String(version).split('.');
   if (parts.length > 2 && parts.every(part => /^\d+$/.test(part))) return parts.slice(0, 2).join('.');
@@ -120,6 +117,9 @@ const versionKey = version => {
 
 const majorVersion = version => String(version).split('.')[0];
 
+/*
+ * Helper to get core
+ */
 const getCore = options => {
   switch (versionKey(options.version)) {
     case 'custom': return 'not supported';
