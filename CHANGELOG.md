@@ -1,16 +1,10 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-* Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) for mod_headers/mod_expires and xdebug log fix
-* Added support for Solr 10 [#74](https://github.com/lando/solr/issues/74)
-* Added support for Solr 9.10
-* Route patch versions to the matching series parser so `solr:8.11.2` and `solr:10.1` do not fall through to the generic start script [#27](https://github.com/lando/solr/issues/27). Existing apps pinned to an 8.x or 9.x patch tag will mount data at `/var/solr/data` instead of `/opt/solr/server/solr/mycores`, so rebuild and reindex if the old index looks missing.
-
-## v1.5.0 - [February 18, 2026](https://github.com/lando/solr/releases/tag/v1.5.0)
-
-* Updated `@lando/php` to `^1.10.0`
-* Fixed release workflow to trigger on `published` instead of `created`
-* Updated `actions/cache` to v5 across CI workflows
-* Added [@AaronFeledy](https://github.com/AaronFeledy) as maintainer
+* Added support for Solr 10 [#74](https://github.com/lando/solr/issues/74).
+* Added support for Solr 9.10.
+* Fixed patch versions such as `solr:8.11.2` and `solr:10.1` so they use the correct Solr config [#27](https://github.com/lando/solr/issues/27). Apps already pinned to an 8.x or 9.x patch tag now store data in `/var/solr/data` and may need a rebuild.
+* Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) for mod_headers/mod_expires and xdebug log fix.
+* Solr 9 is no longer marked experimental.
 
 ## v1.4.1 - [December 6, 2025](https://github.com/lando/solr/releases/tag/v1.4.1)
 

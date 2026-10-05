@@ -20,18 +20,18 @@ services:
 
 *   [10](https://hub.docker.com/_/solr/) **(experimental)**
 *   [10.0](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.10](https://hub.docker.com/_/solr/) **(experimental)**
+*   [9.10](https://hub.docker.com/_/solr/)
 *   [9.9](https://hub.docker.com/_/solr/)
 *   [9.8](https://hub.docker.com/_/solr/)
-*   [9.7](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.6](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.5](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.4](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.3](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.2](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.1](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9](https://hub.docker.com/_/solr/) **(experimental)**
-*   [9.0](https://hub.docker.com/_/solr/) **(experimental)**
+*   [9.7](https://hub.docker.com/_/solr/)
+*   [9.6](https://hub.docker.com/_/solr/)
+*   [9.5](https://hub.docker.com/_/solr/)
+*   [9.4](https://hub.docker.com/_/solr/)
+*   [9.3](https://hub.docker.com/_/solr/)
+*   [9.2](https://hub.docker.com/_/solr/)
+*   [9.1](https://hub.docker.com/_/solr/)
+*   [9](https://hub.docker.com/_/solr/)
+*   [9.0](https://hub.docker.com/_/solr/)
 *   [8](https://hub.docker.com/_/solr/)
 *   [8.11](https://hub.docker.com/_/solr/)
 *   [8.10](https://hub.docker.com/_/solr/)
