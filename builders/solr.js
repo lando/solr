@@ -6,6 +6,8 @@ const path = require('path');
 
 // Versions
 const supportedVersions = [
+  '10.0',
+  '10',
   '9.9',
   '9.8',
   '9.7',
@@ -87,6 +89,16 @@ const parse9 = options => {
 };
 
 /*
+ * Helper to parse solr 10 config
+ */
+const parse10 = options => {
+  options = parseElse(options);
+  options.dataDir = '/var/solr/data';
+  options.startScript = 'start-solr-10.sh';
+  return options;
+};
+
+/*
  * Helper to parse generic solr config
  */
 const parseElse = options => {
@@ -158,6 +170,8 @@ const parseConfig = options => {
     case '9.1': return parse9(options);
     case '9.0': return parse9(options);
     case '9': return parse9(options);
+    case '10.0': return parse10(options);
+    case '10': return parse10(options);
     default: return parseElse(options);
   };
 };
