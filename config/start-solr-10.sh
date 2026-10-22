@@ -11,7 +11,6 @@ echo "CONFIG CUSTOM: $LANDO_SOLR_CUSTOM"
 echo "DATADIR: $LANDO_SOLR_DATADIR"
 echo "INSTALL DIR": $LANDO_SOLR_INSTALL_DIR
 
-# Make sure the conf dir is good if we have one
 if [ "$LANDO_SOLR_CUSTOM" != "none" ]; then
   if [ -f "/solrconf/conf/solrcore.properties" ]; then
     if cat "/solrconf/conf/solrcore.properties" | grep "solr.install.dir"; then
@@ -25,7 +24,6 @@ if [ "$LANDO_SOLR_CUSTOM" != "none" ]; then
   fi
 fi
 
-# Chownage
 mkdir -p /solrconf
 mkdir -p /opt/solr
 mkdir -p /var/solr
@@ -47,7 +45,6 @@ as_solr() {
   fi
 }
 
-# Go down to solr and run
 if [ "$LANDO_SOLR_CUSTOM" != "none" ]; then
   as_solr docker-entrypoint.sh precreate-core "$LANDO_SOLR_CORE" /solrconf
   as_solr cp -a "/solrconf/conf/." "$LANDO_SOLR_DATADIR/$LANDO_SOLR_CORE/conf/"
