@@ -35,12 +35,24 @@ chown -R solr:solr /var/solr
 
 . /opt/solr/docker/scripts/run-initdb
 
+# Solr 9.11 dropped gosu from the official image (SOLR-17353). Older 9.x tags still ship it.
+as_solr() {
+  if command -v gosu >/dev/null 2>&1; then
+    gosu solr:solr "$@"
+  elif command -v setpriv >/dev/null 2>&1; then
+    setpriv --reuid=solr --regid=solr --init-groups -- "$@"
+  else
+    echo "Cannot drop privileges to solr: gosu and setpriv are both missing" >&2
+    exit 1
+  fi
+}
+
 # Go down to solr and run
 if [ "$LANDO_SOLR_CUSTOM" != "none" ]; then
-  gosu solr:solr docker-entrypoint.sh precreate-core "$LANDO_SOLR_CORE" /solrconf
-  gosu solr:solr cp -a "/solrconf/conf/." "$LANDO_SOLR_DATADIR/$LANDO_SOLR_CORE/conf/"
+  as_solr docker-entrypoint.sh precreate-core "$LANDO_SOLR_CORE" /solrconf
+  as_solr cp -a "/solrconf/conf/." "$LANDO_SOLR_DATADIR/$LANDO_SOLR_CORE/conf/"
 else
-  gosu solr:solr docker-entrypoint.sh precreate-core "$LANDO_SOLR_CORE"
+  as_solr docker-entrypoint.sh precreate-core "$LANDO_SOLR_CORE"
 fi
 
-gosu solr:solr solr -f
+as_solr solr -f

@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Fixed `solr:9` (9.11+) failing to start because the official image no longer includes `gosu` [#81](https://github.com/lando/solr/issues/81).
+
 ## v1.5.0 - [October 5, 2026](https://github.com/lando/solr/releases/tag/v1.5.0)
 
 * Added support for Solr 10 [#74](https://github.com/lando/solr/issues/74).
