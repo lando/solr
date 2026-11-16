@@ -100,6 +100,41 @@ services:
       dir: web/modules/contrib/search_api_solr/jump-start/solr7/config-set
 ```
 
+## Enabling modules
+
+On Solr 9 and 10, use `modules` to enable optional modules bundled with the Solr image:
+
+```yaml
+services:
+  myservice:
+    type: solr:9.8
+    modules:
+      - analysis-extras
+```
+
+For example, `analysis-extras` provides `ICUCollationField`. There is no need to download its JAR separately: Solr loads the module and its bundled dependencies through `SOLR_MODULES`. Use module names, not versioned JAR names. Available modules depend on your image; slim images do not include them.
+
+Use a current Solr release for `ICUCollationField`; Solr 9.0 has a class-loading bug in that field type even when `analysis-extras` is enabled.
+
+If `modules` is omitted, an existing `SOLR_MODULES` environment override is left unchanged. An explicit environment override takes precedence over `modules`.
+
+## Loading custom plugins
+
+On Solr 9 and 10, use `plugins` for third-party JARs that are not bundled modules:
+
+```yaml
+services:
+  myservice:
+    type: solr:9.8
+    plugins: ./solr/plugins
+```
+
+The directory must exist inside your application. Put the plugin JARs **and their dependencies** directly in this directory; subdirectories and non-JAR files are ignored. Lando does not download plugins or resolve dependencies. Choose JARs compatible with the Solr version you are running.
+
+Lando mounts the source directory read-only and copies its JARs into `/var/solr/data/lib` (Solr home's shared library directory) before starting Solr. This makes them available to every core without hiding Solr's bundled libraries or requiring `<lib>` directives in `solrconfig.xml`. A filename conflict with an existing library stops startup. Plugins that specifically require installation in `WEB-INF/lib` are not supported by this option.
+
+Run `lando rebuild` after changing `modules`, `plugins`, or the JAR files. Previously copied JARs are removed on startup so deleted plugins do not linger, while bundled libraries are preserved.
+
 ## Getting information
 
 You can get connection and credential information about your solr instance by running [`lando info`](https://docs.lando.dev/cli/info.html). It may also be worth checking out our [accessing services externally guide](https://docs.lando.dev/guides/external-access.html).
