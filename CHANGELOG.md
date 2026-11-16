@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.6.0 - [November 16, 2026](https://github.com/lando/solr/releases/tag/v1.6.0)
+
 * Added `modules` and local `plugins` options for Solr 9 and 10 [#58](https://github.com/lando/solr/issues/58).
 * Fixed `solr:9` (9.11+) startup without `gosu` [#80](https://github.com/lando/solr/issues/80).
 
