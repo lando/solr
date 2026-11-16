@@ -3,6 +3,7 @@
 This is the _official_ [Lando](https://lando.dev) plugin for [Solr](http://lucene.apache.org/solr/). When installed it...
 
 * Allows users to run various `solr` versions
+* Enables bundled modules and local plugin JARs on Solr 9 and 10
 
 Of course, once a user is running their Solr project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
 

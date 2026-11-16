@@ -27,6 +27,7 @@ fi
 mkdir -p /solrconf
 mkdir -p /opt/solr
 mkdir -p /var/solr
+bash /install-solr-plugins.sh
 chown -R solr:solr /solrconf
 chown -R solr:solr /opt/solr
 chown -R solr:solr /var/solr

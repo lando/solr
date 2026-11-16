@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const fs = require('fs');
 const path = require('path');
 
 // Versions
@@ -118,6 +119,35 @@ const versionKey = version => {
 const majorVersion = version => String(version).split('.')[0];
 
 /*
+ * Validate addon options before creating container mounts.
+ */
+const getPlugins = options => {
+  if (_.has(options, 'modules') || _.has(options, 'plugins')) {
+    if (!['9', '10'].includes(majorVersion(options.version))) {
+      throw Error('Solr modules and plugins require Solr 9 or 10');
+    }
+  }
+  if (_.has(options, 'modules') && (!Array.isArray(options.modules)
+    || options.modules.some(module => typeof module !== 'string' || !/^[a-z][a-z0-9-]*$/.test(module)))) {
+    throw Error('Solr modules must be a list of module names, for example: [analysis-extras]');
+  }
+  if (!_.has(options, 'plugins')) return;
+  if (typeof options.plugins !== 'string' || !options.plugins.trim() || path.isAbsolute(options.plugins)) {
+    throw Error('Solr plugins must be a project-relative directory');
+  }
+  const root = fs.realpathSync(options.root);
+  const directory = path.resolve(root, options.plugins);
+  if (!fs.existsSync(directory) || !fs.statSync(directory).isDirectory()) {
+    throw Error(`Solr plugins directory does not exist: ${options.plugins}`);
+  }
+  const relative = path.relative(root, fs.realpathSync(directory));
+  if (relative === '..' || relative.startsWith(`..${path.sep}`) || path.isAbsolute(relative)) {
+    throw Error('Solr plugins directory must be inside the application root');
+  }
+  return directory;
+};
+
+/*
  * Helper to get core
  */
 const getCore = options => {
@@ -144,6 +174,8 @@ const getEnvironment = options => ({
   LANDO_WEBROOT_GROUP: 'solr',
   LANDO_WEBROOT_UID: '8983',
   LANDO_WEBROOT_GID: '8983',
+  ...(_.has(options, 'modules') ? {SOLR_MODULES: _.uniq(options.modules).join(',')} : {}),
+  ...(_.has(options, 'plugins') ? {LANDO_SOLR_PLUGINS_DIR: '/lando-solr-plugins'} : {}),
 });
 
 /*
@@ -217,6 +249,7 @@ module.exports = {
   builder: (parent, config) => class LandoSolr extends parent {
     constructor(id, options = {}) {
       options = parseConfig(_.merge({}, config, options));
+      const plugins = getPlugins(options);
       const solr = {
         image: options.image,
         command: `/bin/sh -c "${options.command}"`,
@@ -226,6 +259,12 @@ module.exports = {
         ],
         user: 'root',
       };
+      if (plugins) {
+        solr.volumes.push(`${plugins}:/lando-solr-plugins:ro`);
+      }
+      if (['9', '10'].includes(majorVersion(options.version))) {
+        solr.volumes.push(`${options.confDest}/install-plugins.sh:/install-solr-plugins.sh:ro`);
+      }
       // Add in persistent datadir
       if (!_.isEmpty(options.dataDir)) solr.volumes.push(`${options.data}:${options.dataDir}`);
       // Change the me user
